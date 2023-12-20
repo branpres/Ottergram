@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Post from './components/Post';
 import Barry from  './otters/otter1.jpg';
@@ -26,6 +27,7 @@ function App() {
             ))
           }
         </ul>
+        <Footer />
     </div>
   );
 }
