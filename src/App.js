@@ -2,6 +2,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Post from './components/Post';
+import SelectedItem from './components/SelectedItem';
 import Barry from  './otters/otter1.jpg';
 import Robin from './otters/otter2.jpg';
 import Maurice from './otters/otter3.jpg';
@@ -20,13 +21,16 @@ function App() {
   return (
     <div>
       <Header />
-      <ul className='post-list'>
-          {
-            otters.map((otter) => (
-              <Post key={otter.id} src={otter.src} name={otter.name} />
-            ))
-          }
-        </ul>
+      <div className='app-content'>
+        <ul className='post-list'>
+            {
+              otters.map((otter) => (
+                <Post key={otter.id} src={otter.src} name={otter.name} />
+              ))
+            }
+          </ul>
+          <SelectedItem src={Barry} name='Barry' />
+        </div>
         <Footer />
     </div>
   );
