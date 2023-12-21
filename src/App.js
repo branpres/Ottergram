@@ -22,12 +22,12 @@ function App() {
     const [selectedPostName, setSelectedPostName] = useState('Barry');
     const selectedPost = otters.find(otter => otter.name === selectedPostName);
 
-    const [orderedOtters, setOrderedOtters] = useState(otters);
+    const [shuffledOtters, setShuffledOtters] = useState(otters);
 
     const handleShuffleButtonClick = () => {
-        var first = orderedOtters[0];
-        var rest = orderedOtters.filter(otter => otter.id !== first.id);
-        setOrderedOtters([...rest, first]);
+        var first = shuffledOtters[0];
+        var rest = shuffledOtters.filter(otter => otter.id !== first.id);
+        setShuffledOtters([...rest, first]);
     };
 
     return (
@@ -37,7 +37,7 @@ function App() {
         <div className='app-content'>                    
           <ul className='post-list'>
             {
-              orderedOtters.map((otter) => (
+              shuffledOtters.map((otter) => (
                 <Post key={otter.id} src={otter.src} name={otter.name} setSelectedPostName={setSelectedPostName} />
               ))
             }
