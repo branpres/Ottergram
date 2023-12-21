@@ -1,9 +1,4 @@
-function Post({ src, name }) {
-    const handleClick = (name) => {
-      console.log('Clicked on ' + name);
-      alert("Here's " + name);
-    }
-
+function Post({ src, name, setSelectedPostName }) {
     const handleMouseEnter = (name) => {
       console.log('Howdy ' + name);
     }
@@ -14,7 +9,7 @@ function Post({ src, name }) {
 
     return (
         <li className='post-component'>
-            <button onClick={ () => handleClick(name)} onMouseEnter={() => handleMouseEnter(name)} onMouseLeave={() => handleMouseLeave(name)}>
+            <button onClick={ () => setSelectedPostName(name)} onMouseEnter={() => handleMouseEnter(name)} onMouseLeave={() => handleMouseLeave(name)}>
               <img src={src} alt={name} />
               <p className="post-name">{name}</p>
             </button>
