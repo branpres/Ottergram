@@ -1,10 +1,10 @@
 function Post({ src, name, setSelectedPostName }) {
     const handleMouseEnter = (name) => {
-      console.log('Howdy ' + name);
+        console.log('Howdy ' + name);
     }
 
     const handleMouseLeave = (name) => {
-      console.log('See ya ' + name);
+        console.log('See ya ' + name);
     }
 
     return (
